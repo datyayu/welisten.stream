@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Music Player</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Exo+2:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+  <div class="file-drop" id="js-file-input">
+      <h1 class="drag-text"> Drop audio file to play </h1>
+  </div>
+
+  <div class="container">
+    <canvas class="canvas" id="js-canvas" width="499px" height="105px"></canvas>
+
+    <div class="song-progress" id="js-progress">
+        <div class="song-current-progress" id="js-bar"></div>
+    </div>
+
+    <div class="song-info">
+        <div class="song-image-container" id="js-play-icon-container">
+            <i class="material-icons song-icon animate" id="js-play-icon">autorenew</i>
+            <img src="./images/album.jpg" alt="album cover" id="js-song-cover" class="song-image">
+        </div>
+
+        <div class="song-text">
+            <h2 class="song-title" id="js-song-name">8films</h1>
+            <h2 class="song-artist" id="js-song-artist">Uchu conbini</h2>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/scripts/ongaku.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/file-drop.js"></script>
+</body>
+</html>

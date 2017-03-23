@@ -1,0 +1,16 @@
+{
+  "name": "welisten",
+  "version": "1.0.0",
+  "description": "A shared music player",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Arturo Coronel <aoitsu3@gmail.com> (https://datyayu.xyz)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
+  }
+}
