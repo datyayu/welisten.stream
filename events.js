@@ -25,6 +25,7 @@ client.on('pause', function() {
 
 client.on('seek', function(percentage) {
     server.emit('seek', percentage)
+    console.log('seek', client.id, percentage)
 })
 
 }

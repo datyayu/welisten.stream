@@ -136,5 +136,6 @@ socket.on('pause', function() {
 })
 
 socket.on('seek', function (percentage) {
+    console.log('seek')
     ongaku.seekPercentage(percentage)
 })
