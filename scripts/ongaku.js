@@ -73,6 +73,20 @@ class Ongaku {
         });
     }
 
+    loadFromLocalBuffer(buffer) {
+        return new Promise((resolve) => {
+            this._audioCtx.decodeAudioData(buffer, (decodedBuffer) => {
+                this._buffer = decodedBuffer;
+
+                if (this._callbacks.onBufferLoaded) {
+                    this._callbacks.onBufferLoaded();
+                }
+
+                resolve(decodedBuffer)
+            });
+        })
+    }
+
     getContext() {
         return this._audioCtx;
     }

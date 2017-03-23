@@ -46,13 +46,19 @@ $fileInput.addEventListener('drop', function(evt) {
     reader.readAsArrayBuffer(file);
 })
 
-
 socket.on('file added', function() {
     ongaku.stop()
 })
 
 
 socket.on('file sent', function(streamedBuffer) {
-    socket.emit('canplay')
-    ongaku.playFromLocalBuffer(streamedBuffer);
+    ongaku
+        .loadFromLocalBuffer(streamedBuffer)
+        .then(function() {
+            socket.emit('client can play')
+        });
+})
+
+socket.on('canplay', function() {
+    ongaku.play()
 })

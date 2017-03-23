@@ -53,8 +53,6 @@ function setupAnalyser(context) {
     analyser.connect(javascriptNode);
 }
 
-
-
 javascriptNode.onaudioprocess = function() {
     if (!ongaku.isPlaying()) return;
 
@@ -66,7 +64,6 @@ javascriptNode.onaudioprocess = function() {
     drawSpectrum(array);
     updateProgress();
 }
-
 
 function drawSpectrum(array) {
     // clear the current state
