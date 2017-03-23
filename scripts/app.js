@@ -24,11 +24,9 @@ var ongaku = new Ongaku({
     onPlaybackPause: function() {
         clearSpectrum();
         $playIcon.innerText = "play_arrow"
-        socket.emit('pause')
     },
     onPlaybackStart: function() {
         $playIcon.innerText = "pause"
-        socket.emit('play')
     },
     onBufferLoaded: function() {
         $playIcon.classList.remove('animate');
@@ -123,9 +121,9 @@ $progressContainer.addEventListener('click', function(event) {
 
 $playIconContainer.addEventListener('click', function() {
     if (ongaku.isPlaying()) {
-        ongaku.pause();
+        socket.emit('pause')
     } else {
-        ongaku.play();
+        socket.emit('play')
     }
 })
 
